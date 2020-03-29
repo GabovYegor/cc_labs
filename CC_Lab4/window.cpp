@@ -9,7 +9,4 @@ Window::Window() {
     setLayout(mainLayout);
 }
 
-void Window::keyPressEvent(QKeyEvent *e) {
-    if (e->key() == Qt::Key_Escape)
-        close();
-}
+void Window::keyPressEvent(QKeyEvent *e) { if (e->key() == Qt::Key_Escape) close(); }

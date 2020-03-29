@@ -14,14 +14,19 @@ public:
     void paintGL()override;
 
 private:
+    GLfloat pointSize = 20;
+    GLfloat lineWidth = 10;
+
     std::vector <QPointF> mainPoints;
     void mousePressEvent(QMouseEvent* event) override;
+    void mouseMoveEvent(QMouseEvent * event) override;
+    bool checkPointsCollision(const QPointF& p1, const QPointF& p2);
     void drawMainPoints();
     void drawStraightLinesBetweenMainPoints();
-    void BeziersCurve();
+    void drawBeziersCurve();
     int factorial(const int n);
     float binomial_coff(const float n, const float k);
-    QPointF calculateBeziersPoint(const double t);
+    QPointF calculateBeziersCurve(const double t);
 };
 
 #endif // GLVIEW_HPP
